@@ -1,0 +1,53 @@
+// Place all the styles related to the post controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+.post-body{
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.post-item{
+  border-radius: 5px;
+  background-color: #fcf8e3;
+  margin: 5px 0 10px 0;
+}
+
+.post-item-head{
+  font-size: 0.85em;
+  padding-left: 20px;
+  border-bottom: solid 1px #faebcc;
+}
+
+.post-item-head-content{
+  margin-bottom: 0;
+}
+
+.post-item-head-posted{
+  margin-bottom: 0;
+}
+
+.post-item-head-visited{
+  margin-left: 15px;
+}
+
+
+.post-item-tail-content{
+  border-top: solid 1px #faebcc;
+  padding-left: 20px;
+}
+
+.post-comment{
+  width: 80%;
+  margin: 5px 10% 0 10%;
+}
+
+.post-comment-box{
+  margin-bottom: 5px;
+}
+
+text-area{
+  width: 100%;
+  height: 100%;
+}
