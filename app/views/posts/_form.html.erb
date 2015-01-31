@@ -1,9 +1,9 @@
-<%= form_for @post do |post| %>
+<%= form_for (@post, remote: true) do |post| %>
   <p>
     <%= post.label 'New Post' %></br>
     <%= post.text_area :body, class:'form-control' %>
   </p>
   <p>
-    <%= post.submit class:'btn btn-success' %>
+    <%= post.submit class:'btn btn-warning' %>
   </p>
 <% end %>

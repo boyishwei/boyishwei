@@ -1,0 +1,29 @@
+<%= form_for(@blog) do |f| %>
+  <% if @blog.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
+
+      <ul>
+      <% @blog.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title, class:"form-control"%>
+  </div>
+  <div class="field">
+    <%= f.text_area :content, class:"blog-content form-control" %>
+  </div>
+  <div class="field">
+    <%= f.check_box :visible %>
+    <%= f.label :visible, "publish" %>
+  </div>
+  <div class="actions">
+    <%= f.submit class: "btn btn-primary"%>
+    <%= link_to 'Cancel', blogs_path, class: "btn btn-default" %>
+  </div>
+<% end %>

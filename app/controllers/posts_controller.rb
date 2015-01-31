@@ -2,7 +2,10 @@ class PostsController < ApplicationController
   layout 'overall'
 
   def index
-    @posts = Post.all.order('created_at DESC')
+    page = params[:page] 
+
+    #@posts = Post.per(10).all.order('created_at DESC')
+    @posts = Post.page(page).order('created_at DESC')
   end
 
   def new
@@ -15,7 +18,11 @@ class PostsController < ApplicationController
     time = Time.now
     post.created_at = time
     post.updated_at = time
-    redirect_to action: :index if post.save
+
+    if !post.save
+      flash.now[:post_error] = 'Pust nullable not allowed buddy' #unless post.save
+    else
+    end
   end
 
   def show
@@ -28,7 +35,7 @@ class PostsController < ApplicationController
     
     #render ajax
   end
-  
+
   # Never trust parameters from the scary internet, only allow the white list through.                                                                 
   def post_params
     params.require(:post).permit(:body)

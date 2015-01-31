@@ -1,30 +1,30 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
-    <% if logined_in? %>
-      <button id="display-post-btn" class="btn btn-success">Compose</button>
-      <%= form_for Post.new, html: { class: 'na global-hidden', id: 'post-form' } do |post|%>
-      <p>
-        <%= post.label 'New Post', class: 'sr-only' %></br>
-        <%= post.text_area :body, class: 'form-control' %>
-      </p>
-      <p>
-      <%= post.submit "Compose", class:'btn btn-success' %>
-      <button id="cancel-post-btn" class="btn btn-default" type="button">Cancel</button>
-      </p>
-      <% end %>
-    <% end %>
+    <% if signed_in? %>
+    <div class="col-md-12 post-compose-div">
+        <button id="display-post-btn" class="btn btn-success">Compose</button>
+        <%= form_for Post.new, remote: true,  html: { class: 'na global-hidden', id: 'post-form' } do |post|%>
+          <p>
+          <%= post.label 'New Post', class: 'sr-only' %></br>
+          <%= post.text_area :body, class: 'form-control' %>
+          </p>
+          <p>
+          <%= post.submit "Compose", class:'btn btn-success' %>
+          <button id="cancel-post-btn" class="btn btn-default" type="button">Cancel</button>
+          </p>
+        <% end %>
     </div>
-    <div class="col-md-12">
+    <% end %>
+    <div class="col-md-12 post-items">
       <% @posts.each do |post| %>
         <div class="post-item" data-post-id=<%= post.id %>>
           <div class="post-item-head">
             <span class="text-muted post-item-head-posted">
               Ryan posted <%= time_ago_in_words post.created_at %> ago,
             </span>
-            <span class="text-muted post-item-head-visited">
+            <!--<span class="text-muted post-item-head-visited">
               999 times visited
-            </span>
+            </span>-->
           </div>
           <div class="post-item-body">
             <p class="post-body">
@@ -33,7 +33,7 @@
           </div>
           <div class="post-item-tail">
             <div class="post-item-tail-content">
-              <span class="glyphicon glyphicon-comment glyphicon-btn"></span>
+              <span class="glyphicon glyphicon-comment glyphicon-btn global-hidden"></span>
             </div>
             <br/>
           </div>
@@ -48,6 +48,7 @@
           <button class="btn btn-success commit-comment-btn" value="Boo It">Boo It</button>
         </div>
       </div>
-         
     </div>
   </div>
+  <%= paginate @posts%>
+</div>

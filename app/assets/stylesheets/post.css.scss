@@ -3,21 +3,26 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap-sprockets";
 @import "bootstrap";
+.post-items{
+  margin: 20px 0 20px 0;
+}
+
+.post-item{
+  border-radius: 5px;
+  background-color: #f7f7f9;
+  margin: 5px 0 10px 0;
+}
+
 .post-body{
   padding: 15px;
   border-radius: 5px;
 }
 
-.post-item{
-  border-radius: 5px;
-  background-color: #fcf8e3;
-  margin: 5px 0 10px 0;
-}
-
 .post-item-head{
   font-size: 0.85em;
   padding-left: 20px;
-  border-bottom: solid 1px #faebcc;
+  height: 21px;
+  border-bottom: solid 1px #fff;
 }
 
 .post-item-head-content{

@@ -1,0 +1,6 @@
+<% if flash[:login_error] %>
+  $("<div class='alert alert-danger text-center modal-error' role='alert'>password not correct!</div>").insertAfter($('.modal-header'));
+<% else %>
+  //how to reload current page
+  location.reload();
+<% end %>

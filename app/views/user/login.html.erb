@@ -1,0 +1,8 @@
+<div class="login_div">
+  <div class="login_passwd">
+    <p class="login_title">Login</p>
+    <%= form_for :user do |u| %>
+      <%= u.password_field :password, class:"form-control" %>  
+    <% end %>
+  </div>
+</div>

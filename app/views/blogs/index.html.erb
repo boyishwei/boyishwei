@@ -1,0 +1,18 @@
+<div class="blog-lists">
+    <% @blogs.each do |blog| %>
+      <p>
+      <%= link_to blog.title, blog %></td>
+      <% if signed_in? %>
+        <span class="pull-right">
+          <%= link_to 'Edit', edit_blog_path(blog), class:"btn btn-xs btn-success" %>
+          <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } , class:"btn btn-xs btn-warning" %>
+        </span>
+      <% end %>
+      </p>
+    <% end %>
+<br>
+
+<% if signed_in? %>
+  <%= link_to 'New Blog', new_blog_path , class:"btn btn-primary" %>
+<% end %>
+</div>

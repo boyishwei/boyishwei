@@ -32,13 +32,28 @@ gem 'spring',        group: :development
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use unicorn as the app server
-#gem 'uncorn'
 gem 'puma'
+
+# Markdown 格式 & 文本处理
+gem 'redcarpet', '~> 3.2.0'
+#gem 'rouge', '~> 1.3.4'
+gem 'coderay', '~> 1.1.0'
+gem 'nokogiri', '~> 1.6.6'
+gem 'auto-space', '~>0.0.4'
+
+#paging
+gem 'kaminari', '~> 0.16.1'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
+group :development do
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  # Add this if you're using rvm
+  #   # gem 'capistrano-rvm'
+end

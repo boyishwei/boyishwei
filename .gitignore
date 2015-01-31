@@ -22,4 +22,9 @@
 *.swap
 
 # Ignore Gemfile.lock
-Gemfile.lock
+test/
+.DS_Store 
+.capistrano
+/config/deploy.rb
+Capfile
+config/deploy/
