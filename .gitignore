@@ -19,7 +19,7 @@
 /public/assets/*
 
 # Ignore all .swap files
-*.swap
+# *.swp
 
 # Ignore Gemfile.lock
 test/

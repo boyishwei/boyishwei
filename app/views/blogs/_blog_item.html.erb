@@ -1,9 +1,14 @@
 <div class="blog-item">
   <div class="blog-header">
+      <p>
     <h3>
-      <%= blog.title %>
-      <small class="pull-right"><em>Ryan posted <%= time_ago_in_words blog.created_at %> ago</em></small>
+        <%= blog.title %>
     </h3>
+      </p>
+    </p>
+    <p>
+    <small class="pull-right"><em>Ryan posted <%= time_ago_in_words blog.created_at %> ago</em></small>
+    </p>
   </div>
   <div class="blog-body">
     <p>
