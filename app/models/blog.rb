@@ -5,4 +5,6 @@ class Blog
   field :visible, type: Mongoid::Boolean
   field :created_at, type: DateTime
   field :updated_at, type: DateTime
+  
+  has_many :comments, dependent: :destroy
 end
