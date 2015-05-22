@@ -22,8 +22,10 @@
 *.swp
 
 # Ignore Gemfile.lock
+
+# Ignore others
 test/
-.DS_Store 
+app/.DS_Store 
 .capistrano
 /config/deploy.rb
 Capfile
